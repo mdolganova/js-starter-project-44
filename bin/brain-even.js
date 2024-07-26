@@ -7,11 +7,13 @@ const name = greeting();
 
 let count = 0;
 let answer;
+let win = false;
 do {
   answer = getEvenAnswer();
+  win = checkEvenAnswer(answer, name);
   count += 1;
-} while (checkEvenAnswer(answer, name) && count < 3);
+} while (win && count < 3);
 
-if (count === 3) {
+if (win && count === 3) {
   console.log(`Congratulations, ${name}!`);
 }
