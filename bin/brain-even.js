@@ -1,19 +1,20 @@
 #!/usr/bin/env node
+import greeting from "../src/greeting.js";
+import getRandomInt from "../src/getRandomInt.js";
+import playGame from "../src/playGame.js";
 
-import { getEvenAnswer, checkEvenAnswer } from "../src/evenGame.js";
-import { greeting } from "../src/greeting.js";
+const greetingPhrase =
+  'Answer "yes" if the number is even, otherwise answer "no".';
+const name = greeting(greetingPhrase);
 
-const name = greeting();
-
-let count = 0;
-let answer;
-let win = false;
-do {
-  answer = getEvenAnswer();
-  win = checkEvenAnswer(answer, name);
-  count += 1;
-} while (win && count < 3);
-
-if (win && count === 3) {
-  console.log(`Congratulations, ${name}!`);
+const rounds = 3;
+const question = () => {
+  return getRandomInt(0, 101);
+};
+const right = (question) => {
+  return question % 2 ? "no" : "yes";
+};
+const result = playGame(name, rounds, question, right);
+if (result) {
+  console.log(result);
 }
