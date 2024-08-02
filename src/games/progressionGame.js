@@ -27,14 +27,14 @@ const progressionGame = () => {
     let i = 0;
     while (!step) {
       if (elements[i] !== '..' && elements[i + 1] !== '..') {
-        step = parseInt(elements[i + 1]) - parseInt(elements[i]);
+        step = parseInt(elements[i + 1], 10) - parseInt(elements[i], 10);
       }
       i += 1;
     }
     if (position === 0) {
-      hide = parseInt(elements[1]) - step;
+      hide = parseInt(elements[1], 10) - step;
     } else {
-      hide = parseInt(elements[position - 1]) + step;
+      hide = parseInt(elements[position - 1], 10) + step;
     }
     return hide.toString();
   };
