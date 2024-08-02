@@ -6,7 +6,7 @@ const evenGame = () => {
 
   const question = () => getRandomInt(0, 101);
 
-  const right = (check) => (check % 2) ? 'no' : 'yes';
+  const right = (check) => ((check % 2) ? 'no' : 'yes');
 
   game(greetingPhrase, question, right);
 };
