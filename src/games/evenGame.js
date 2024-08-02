@@ -10,7 +10,7 @@ const evenGame = () => {
     const even = (check % 2);
     const result = (even) ? 'no' : 'yes';
     return result;
-  }
+  };
 
   game(greetingPhrase, question, right);
 };
