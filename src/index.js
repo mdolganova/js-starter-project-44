@@ -1,5 +1,5 @@
-import greeting from "../src/greeting.js";
-import playGame from "../src/playGame.js";
+import greeting from './greeting.js';
+import playGame from './playGame.js';
 
 const game = (greetingPhrase, question, right) => {
   const name = greeting(greetingPhrase);

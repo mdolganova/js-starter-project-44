@@ -1,28 +1,25 @@
-import getRandomInt from "../getRandomInt.js";
-import game from "../index.js";
+import getRandomInt from '../getRandomInt.js';
+import game from '../index.js';
 
 const evenGame = () => {
-  const greetingPhrase =
-    'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const greetingPhrase = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const question = () => {
-    return getRandomInt(0, 101);
-  };
+  const question = () => getRandomInt(0, 101);
 
-  const right = (question) => {
-    const number = parseInt(question);
+  const right = (check) => {
+    const number = parseInt(check, 10);
     if (number === 0) {
-      return "no";
+      return 'no';
     }
     if (number === 1) {
-      return "yes";
+      return 'yes';
     }
-    for (let i = 2; i < question; i += 1) {
-      if (question % i === 0) {
-        return "no";
+    for (let i = 2; i < number; i += 1) {
+      if (number % i === 0) {
+        return 'no';
       }
     }
-    return "yes";
+    return 'yes';
   };
 
   game(greetingPhrase, question, right);

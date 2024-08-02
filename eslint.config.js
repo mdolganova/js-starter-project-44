@@ -1,9 +1,8 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 
 export default [
-  {files: ["**/*.{js,mjs,cjs,jsx}"]},
-  {languageOptions: { globals: globals.node }},
+  { files: ['**/*.{js,mjs,cjs,jsx}'] },
+  { languageOptions: { globals: globals.node } },
   pluginJs.configs.recommended,
 ];

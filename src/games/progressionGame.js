@@ -1,8 +1,8 @@
-import getRandomInt from "../getRandomInt.js";
-import game from "../index.js";
+import getRandomInt from '../getRandomInt.js';
+import game from '../index.js';
 
 const progressionGame = () => {
-  const greetingPhrase = "What number is missing in the progression?";
+  const greetingPhrase = 'What number is missing in the progression?';
 
   const question = () => {
     const start = getRandomInt(0, 101);
@@ -10,23 +10,23 @@ const progressionGame = () => {
     const count = getRandomInt(5, 11);
     const hide = getRandomInt(0, count);
     const end = start + step * (count - 1);
-    let elements = [];
+    const elements = [];
     for (let i = start; i <= end; i += step) {
       elements.push(i);
     }
-    elements[hide] = "..";
-    const expression = elements.join(" ");
+    elements[hide] = '..';
+    const expression = elements.join(' ');
     return expression;
   };
 
-  const right = (question) => {
-    const elements = question.split(" ");
-    const position = elements.indexOf("..");
+  const right = (check) => {
+    const elements = check.split(' ');
+    const position = elements.indexOf('..');
     let hide;
     let step;
     let i = 0;
     while (!step) {
-      if (elements[i] !== ".." && elements[i + 1] !== "..") {
+      if (elements[i] !== '..' && elements[i + 1] !== '..') {
         step = parseInt(elements[i + 1]) - parseInt(elements[i]);
       }
       i += 1;

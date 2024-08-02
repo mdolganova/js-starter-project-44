@@ -1,5 +1,5 @@
-import getAnswer from "../src/getAnswer.js";
-import checkAnswer from "../src/checkAnswer.js";
+import getAnswer from './getAnswer.js';
+import checkAnswer from './checkAnswer.js';
 
 const playGame = (name, rounds, question, right) => {
   let win = false;
